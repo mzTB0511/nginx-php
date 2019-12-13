@@ -23,6 +23,9 @@ RUN docker-php-ext-install bcmath \
 #虚拟主机配置文件
 COPY default.conf /etc/nginx/sites-enabled/
 
+#php 配置文件-添加上传文件 最大 200M相关配置
+COPY docker-php-upload.ini /usr/local/etc/php/conf.d
+
 #nginx 配置文件
 COPY nginx.conf /etc/nginx/
 
